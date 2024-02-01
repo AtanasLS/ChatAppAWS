@@ -1,1 +1,41 @@
-<p>chat works!</p>
+<header>
+    <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Angular Web Socket Chat Application</span>
+            </div>
+    </nav>
+</header>
+
+<main>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="card">
+                <div class="card-header">
+                    Direct Message
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flesh">
+                        <li class="list-group-item">
+                
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <form >
+                        <div class="chat-send-row">
+                            <div class="col-2">
+                                <input type="text" class="form-control" name="user" id="input-user" ngModel>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" class="form-controll" name="message" id="input-message" ngModel>
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
