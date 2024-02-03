@@ -10,8 +10,7 @@ export class WebSocketService {
   websocketMessage: WebSocketChat[] = [];
 
   constructor() {
-    this.websocket = new WebSocket('ws://localhost4201/websocket');
-
+    this.websocket = new WebSocket('ws://localhost:4200/websocket');
   }
 
   openWebsocketConnection() {
@@ -35,7 +34,7 @@ export class WebSocketService {
     this.websocket.send(JSON.stringify(chatMsg));
   }
 
-  closeWebsocketConnectio() {
+  closeWebsocketConnection() {
     this.websocket.close();
   }
 
