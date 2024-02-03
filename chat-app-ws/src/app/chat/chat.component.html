@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <form >
+                    <form (ngSumbit)="sendMessage(wsMessageForm)" #wsMessageForm="ngForm">
                         <div class="chat-send-row">
                             <div class="col-2">
                                 <input type="text" class="form-control" name="user" id="input-user" ngModel>

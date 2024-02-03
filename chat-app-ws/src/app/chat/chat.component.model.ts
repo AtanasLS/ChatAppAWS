@@ -1,4 +1,4 @@
-export class WebSocketChatt {
+export class WebSocketChat {
     user: string;
     message: string;
 
