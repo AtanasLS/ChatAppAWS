@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flesh">
-                        <li class="list-group-item" *ngFor="let message of webSocket.websocketMessage">
+                        <li class="list-group-item" *ngFor="let message of websocket.websocketMessage">
                             <span class="user-name">{{message.user}}</span>
                             <span class="user-message">{{message.message}}</span>
                         </li>

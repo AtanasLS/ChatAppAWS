@@ -14,21 +14,21 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent {
-  constructor(public webSocket: WebSocketService) {}
+  constructor(public websocket: WebSocketService) {}
 
   ngOnInit(): void {
-    this.webSocket.openWebsocketConnection();
-  }
+    this.websocket.openWebsocketConnection();
+}
 
   ngOnDestroy(): void {
-    this.webSocket.closeWebsocketConnection();
+    this.websocket.closeWebsocketConnection();
   }
 
   sendMessage(wsMessageForm: NgForm) {
     const chatMsg = new WebSocketChat(wsMessageForm.value.user,
       wsMessageForm.value.message);
 
-    this.webSocket.sendWebsocketMessage(chatMsg);
+    this.websocket.sendWebsocketMessage(chatMsg);
     wsMessageForm.controls['message'].reset();
   }
 }

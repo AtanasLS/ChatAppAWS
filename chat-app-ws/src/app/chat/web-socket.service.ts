@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { WebSocketChat } from './chat.component.model';
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class WebSocketService {
-  websocket: WebSocket;
+  websocket: WebSocket | null = null;
   websocketMessage: WebSocketChat[] = [];
 
-  constructor() {
-    this.websocket = new WebSocket('ws://localhost:4200/websocket');
-  }
+  constructor() { }
+    
 
   openWebsocketConnection() {
-
-    this.websocket.onmessage = (event) => {
+    this.websocket = new WebSocket("ws://localhost:8181");
+    this.websocket.onopen = (event) => {
       console.log(event);
     }
 
@@ -31,10 +31,16 @@ export class WebSocketService {
   }
 
   sendWebsocketMessage(chatMsg: WebSocketChat) {
-    this.websocket.send(JSON.stringify(chatMsg));
+    if(this.websocket != null)
+    if (this.websocket.readyState === WebSocket.OPEN) {
+      this.websocket.send(JSON.stringify(chatMsg));
+    } else {
+      console.error('WebSocket connection is not open yet. Message not sent.');
+    }
   }
 
   closeWebsocketConnection() {
+    if(this.websocket != null)
     this.websocket.close();
   }
 
