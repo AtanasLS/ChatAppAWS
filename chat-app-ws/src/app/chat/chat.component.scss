@@ -7,8 +7,10 @@
 .chat-container .chat-box {
     margin: 4rem;
     min-width: 50rem;
+    max-width: 80%; /* Set a maximum width for responsiveness */
 }
 
 .chat-container .card-body {
     height: 40rem;
+    overflow-y: auto; /* Add overflow-y for scroll if content exceeds the height */
 }

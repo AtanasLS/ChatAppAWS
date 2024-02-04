@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">Angular Web Socket Chat Application</span>
-            </div>
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Angular Web Socket Chat Application</span>
+        </div>
     </nav>
 </header>
 
@@ -23,14 +23,14 @@
                 </div>
                 <div class="card-footer">
                     <form (ngSubmit)="sendMessage(wsMessageForm)" #wsMessageForm="ngForm">
-                        <div class="chat-send-row">
-                            <div class="col-2">
+                        <div class="row chat-send-row">
+                            <div class="col-md-2">
                                 <input type="text" class="form-control" name="user" id="input-user" ngModel>
                             </div>
-                            <div class="col-8">
-                                <input type="text" class="form-controll" name="message" id="input-message" ngModel>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="message" id="input-message" ngModel>
                             </div>
-                            <div class="col-2">
+                            <div class="col-md-2">
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </div>
                         </div>
